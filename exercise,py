@@ -1,0 +1,70 @@
+# n = input("Enter the massage:")
+# def reverse(n):
+#     str = " " 
+#     for i in n:
+       
+#         str = i+str
+#     return str
+# print(reverse(n))        
+
+
+# n = input("Enter the number:")
+# print(len(n))
+# if (len(n)>2):
+#     print(n)
+# else:
+#     print(str(reversed(n)))    
+   
+  
+
+# Python3 program to convert
+# integer value to roman values
+
+# Function to convert integer to Roman values
+# def printRoman(x):
+# 	num = [1, 4, 5, 9, 10, 40, 50, 90,
+# 		100, 400, 500, 900, 1000]
+# 	sym = ["I", "IV", "V", "IX", "X", "XL",
+# 		"L", "XC", "C", "CD", "D", "CM", "M"]
+# 	i = 12
+# 	roman_number=" "
+# 	while x!=0:
+# 		if num[i]<=x:
+# 			roman_number += sym[i]
+# 			x =x- num[i]
+# 		else:
+# 			i-=1
+# 	return roman_number			
+# print(printRoman(50))
+# print(printRoman(100))
+# print(printRoman(4674))
+
+
+# class MedianFinder:
+def findMedianSortedArrays(self, nums1: list[int], nums2: list[int]) -> float:
+    output_list = []
+    while(nums1 and nums2):
+        if nums1[0] <= nums2[0]:
+             output_list.append(nums1.pop(0))
+        else:
+            output_list.append(nums2.pop(0))
+        while nums1:
+            output_list.append(nums1.pop(0))
+        while nums2:
+            output_list.append(nums2.pop(0))
+        mid = len(output_list)//2
+        if len(output_list)%2 != 0:
+            return(output_list[mid])
+        return(float(output_list[mid] + output_list[mid-1])/2)
+
+
+
+
+
+
+
+
+
+
+
+
